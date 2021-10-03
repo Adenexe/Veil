@@ -281,15 +281,15 @@ func_package_deps(){
     if [ "${os}" == "debian" ] \
     || [ "${os}" == "kali" ] \
     || [ "${os}" == "parrot" ]; then
-      echo -e "\n\n [*] ${YELLOW}Installing Python's pycrypto (via apt)...${RESET}\n"
-      sudo ${arg} apt-get install -y python3-crypto
+      echo -e "\n\n [*] ${YELLOW}Installing Python's pycryptography (via apt)...${RESET}\n"
+      sudo ${arg} apt-get install -y python3-cryptography
       if [[ "$?" -ne "0" ]]; then
         msg="Failed with installing dependencies (6): $?"
         errors="${errors}\n${msg}"
         echo -e " ${RED}[ERROR] ${msg}${RESET}\n"
       fi
     else
-      echo -e "\n\n [*] ${YELLOW}Installing Python's pycrypto (via pip3)...${RESET}\n"
+      echo -e "\n\n [*] ${YELLOW}Installing Python's pycryptography (via pip3)...${RESET}\n"
       sudo ${arg} apt-get install -y python3-pip
       if [[ "$?" -ne "0" ]]; then
         msg="Failed with installing dependencies (7): $?"
